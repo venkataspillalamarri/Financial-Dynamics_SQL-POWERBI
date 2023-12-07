@@ -1,0 +1,30 @@
+1.Date Table = CALENDAR(MIN(BankLoanData[issue_date]),MAX(BankLoanData[issue_date]))
+2.MonthName = FORMAT('Date Table'[Date],"MMMM")
+
+1.0 Total Loan Applications = COUNT(BankLoanData[id])
+1.1 MTD Loan Applications = CALCULATE(TOTALMTD([1.0 Total Loan Applications],'Date Table'[Date]))
+1.2 MTD SALES = CALCULATE(TOTALMTD([1.5 Total Funded Amount],'Date Table'[Date]))
+1.3 PMTD Loan Applications = CALCULATE([1.0 Total Loan Applications],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+1.4 MOM Loan Applications = ([1.1 MTD Loan Applications]-[1.3 PMTD Loan Applications])/[1.3 PMTD Loan Applications]
+1.5 Total Funded Amount = CALCULATE(SUM(BankLoanData[loan_amount]))
+1.6 PMTD Total Sales = CALCULATE([1.5 Total Funded Amount],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+1.7 MOM Total Sales = ([1.2 MTD SALES]-[1.6 PMTD Total Sales])/[1.6 PMTD Total Sales]
+1.8 Total Reeived Amount = CALCULATE(SUM(BankLoanData[total_payment]))
+1.9 MTD Received = CALCULATE(TOTALMTD([1.8 Total Reeived Amount],'Date Table'[Date]))
+1.A PMTD Amount Received = CALCULATE([1.8 Total Reeived Amount],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+1.B MOM Total Received = ([1.9 MTD Received]-[1.A PMTD Amount Received])/[1.A PMTD Amount Received]
+1.C Average Interest Rate = CALCULATE(AVERAGE(BankLoanData[int_rate]))
+1.D MTD AVERAGE = CALCULATE(TOTALMTD([1.C Average Interest Rate],'Date Table'[Date]))
+1.E PMTD Average = CALCULATE([1.C Average Interest Rate],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+1.F MOM Total Average = ([1.D MTD AVERAGE]-[1.E PMTD Average])/[1.E PMTD Average]
+1.G DTI Rate = CALCULATE(AVERAGE(BankLoanData[dti]))
+1.H MTD DTI = CALCULATE(TOTALMTD([1.G DTI Rate],'Date Table'[Date]))
+1.I PMTD DTI = CALCULATE([1.G DTI Rate],DATESMTD(DATEADD('Date Table'[Date],-1,MONTH)))
+1.J MOM DTI = ([1.H MTD DTI]-[1.I PMTD DTI])/[1.I PMTD DTI]
+1.K Good Loan Percentage = (CALCULATE([1.0 Total Loan Applications],BankLoanData[Good vs Bad]="Good Loan"))/[1.0 Total Loan Applications]
+1L Good Loan Applications = CALCULATE([1.0 Total Loan Applications],BankLoanData[Good vs Bad]="Good Loan")
+1M Good Loan Funded Amount = CALCULATE([1.5 Total Funded Amount],BankLoanData[Good vs Bad]="Good Loan")
+1N Good Loan Total Received = CALCULATE([1.8 Total Reeived Amount],BankLoanData[Good vs Bad]="Good Loan")
+1O Bad Loan Percentage = (CALCULATE([1.0 Total Loan Applications],BankLoanData[Good vs Bad]="Bad Loan"))/[1.0 Total Loan Applications]
+1P Bad Loan Applications = CALCULATE([1.0 Total Loan Applications],BankLoanData[Good vs Bad]="Bad Loan")
+1Q Bad Loan Funded Amount = CALCULATE([1.5 Total Funded Amount],BankLoanData[Good vs Bad]="Bad Loan")
