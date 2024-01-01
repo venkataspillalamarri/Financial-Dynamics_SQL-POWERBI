@@ -1,0 +1,106 @@
+To create a comprehensive Bank Loan Report project with three dashboards (Summary, Overview, and Details), you'll need to follow a systematic approach. Below is a suggested outline and steps to help you organize and implement each dashboard:
+
+### 1. Summary Dashboard:
+
+#### Key Performance Indicators (KPIs):
+
+1. Total Loan Applications:
+   - Calculate total loan applications.
+   - Monitor Month-to-Date (MTD) Loan Applications.
+   - Track Month-over-Month (MoM) changes.
+
+2. Total Funded Amount:
+   - Understand the total amount disbursed as loans.
+   - Monitor MTD Total Funded Amount.
+   - Analyze MoM changes.
+
+3. Total Amount Received:
+   - Track the total amount received from borrowers.
+   - Analyze MTD Total Amount Received.
+   - Observe MoM changes.
+
+4. Average Interest Rate:
+   - Calculate the average interest rate across all loans.
+   - Monitor MTD average interest rate.
+   - Track MoM variations in interest rates.
+
+5. Average Debt-to-Income Ratio (DTI):
+   - Compute the average DTI for all loans.
+   - Monitor MTD average DTI.
+   - Track MoM fluctuations.
+
+#### Good Loan v Bad Loan KPIs:
+
+- **Good Loan KPIs:**
+  1. Good Loan Application Percentage.
+  2. Good Loan Applications.
+  3. Good Loan Funded Amount.
+  4. Good Loan Total Received Amount.
+
+- **Bad Loan KPIs:**
+  1. Bad Loan Application Percentage.
+  2. Bad Loan Applications.
+  3. Bad Loan Funded Amount.
+  4. Bad Loan Total Received Amount.
+
+#### Loan Status Grid View:
+
+- Create a grid view categorized by 'Loan Status.'
+- Include metrics such as Total Loan Applications, Total Funded Amount, Total Amount Received, MTD Funded Amount, MTD Amount Received, Average Interest Rate, and Average DTI.
+
+### 2. Overview Dashboard:
+
+#### Monthly Trends by Issue Date (Line Chart):
+
+- Create a line chart with metrics: Total Loan Applications, Total Funded Amount, and Total Amount Received.
+- X-Axis: Month (based on 'Issue Date').
+- Y-Axis: Metrics' Values.
+- Objective: Identify seasonality and long-term trends in lending activities.
+
+#### Regional Analysis by State (Filled Map):
+
+- Create a filled map with metrics: Total Loan Applications, Total Funded Amount, and Total Amount Received.
+- Geographic Regions: States.
+- Objective: Visualize lending metrics by state, identify regions with significant activity, and assess regional disparities.
+
+#### Loan Term Analysis (Donut Chart):
+
+- Create a donut chart with metrics: Total Loan Applications, Total Funded Amount, and Total Amount Received.
+- Segments: Loan Terms (e.g., 36 months, 60 months).
+- Objective: Understand the distribution of loans across various term lengths.
+
+#### Employee Length Analysis (Bar Chart):
+
+- Create a bar chart with metrics: Total Loan Applications, Total Funded Amount, and Total Amount Received.
+- X-Axis: Employee Length Categories (e.g., 1 year, 5 years, 10+ years).
+- Y-Axis: Metrics' Values.
+- Objective: Assess the impact of employment history on loan applications.
+
+#### Loan Purpose Breakdown (Bar Chart):
+
+- Create a bar chart with metrics: Total Loan Applications, Total Funded Amount, and Total Amount Received.
+- X-Axis: Loan Purpose Categories (e.g., debt consolidation, credit card refinancing).
+- Y-Axis: Metrics' Values.
+- Objective: Visualize loan metrics based on stated purposes.
+
+#### Home Ownership Analysis (Tree Map):
+
+- Create a tree map with metrics: Total Loan Applications, Total Funded Amount, and Total Amount Received.
+- Hierarchy: Home Ownership Categories (e.g., own, rent, mortgage).
+- Objective: Display loan metrics categorized by home ownership statuses hierarchically.
+
+### 3. Details Dashboard:
+
+#### Objective:
+
+- Provide a comprehensive and user-friendly interface for accessing vital loan data.
+- Serve as a one-stop solution for detailed insights into the loan portfolio, borrower profiles, and loan performance.
+
+#### Implementation:
+
+- Design an interactive dashboard with tabs or sections for different aspects (e.g., Loan Portfolio, Borrower Profiles, Loan Performance).
+- Include detailed tables, charts, and filters for granular insights.
+- Use visual elements to enhance user experience (charts, graphs, etc.).
+- Ensure responsiveness for usability on different devices.
+
+By systematically implementing each dashboard with the specified metrics and visualizations, you can create a robust Bank Loan Report project that provides valuable insights for monitoring and assessing your bank's lending activities.
